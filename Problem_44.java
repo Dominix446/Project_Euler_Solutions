@@ -11,9 +11,9 @@
    D = P_{n+c} - P_n = (6nc + 3c^2 - c)/2.
 
 */
-public class ProjectEuler44 {
+public class Problem_44 {
     public static void main(String[] args) {
-        final int MAXN = 10000; //arbitrary search limit
+        final int MAXN = 10000; //arbitrary search limit-the solution lies within this limit thankfully
         long bestD = Long.MAX_VALUE;
         int bestN = -1, bestK = -1;
         for (int n = 1; n <= MAXN; n++) {
@@ -22,18 +22,23 @@ public class ProjectEuler44 {
                 int k = n + c;
                 long pk = (long)k * (3L * k - 1L) / 2L;
                 long diff = pk - pn;
-                if (diff <= 0) continue;
-                if (diff >= bestD) break; 
-
+                if (diff <= 0) 
+                   continue;
+                if (diff >= bestD) 
+                   break; 
                 long sum = pk + pn;
                 long s1 = 24L * diff + 1L;
                 long r1 = (long)Math.sqrt(s1);
-                if (r1 * r1 != s1) continue;
-                if ((r1 + 1L) % 6L != 0L) continue;
+                if (r1 * r1 != s1) 
+                   continue;
+                if ((r1 + 1L) % 6L != 0L)
+                   continue;
                 long s2 = 24L * sum + 1L;
                 long r2 = (long)Math.sqrt(s2);
-                if (r2 * r2 != s2) continue;
-                if ((r2 + 1L) % 6L != 0L) continue;
+                if (r2 * r2 != s2) 
+                   continue;
+                if ((r2 + 1L) % 6L != 0L) 
+                   continue;
                 if (diff < bestD) {
                     bestD = diff;
                     bestN = n;
