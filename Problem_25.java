@@ -1,4 +1,4 @@
-public class Main {
+public class Problem_25 {
   public static void main(String[] args) {
     double phi = (1 + Math.sqrt(5)) / 2.0;
     double logF = 0.0;
